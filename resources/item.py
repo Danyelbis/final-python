@@ -34,7 +34,7 @@ class Item(Resource):
         if item_data:
             item_data.delete_from_db()
             return {'message': "Item Deleted successfully"}, 200
-        return {'message': ITEM_NOT_FOUND}, 404
+        return {'message': ITEM_NOT_FOUND}, 500
 
     @item_ns.expect(item)
     def put(self, id):

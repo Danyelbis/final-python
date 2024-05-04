@@ -29,7 +29,7 @@ def create_tables():
 
 @api.errorhandler(ValidationError)
 def handle_validation_error(error):
-    return jsonify(error.messages), 400
+    return jsonify(error.messages), 500
 
 
 item_ns.add_resource(Item, '/<int:id>')
